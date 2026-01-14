@@ -367,25 +367,25 @@ export async function clusterApi(): Promise<ApiResponse<Cluster>> {
 }
 
 export async function statsApi(): Promise<ApiResponse<Stats>> {
-    return await api.get<Stats>('/ui/api/stats')
+    return await api.get<Stats>('../api/stats')
 }
 
 export async function workerApi(): Promise<ApiResponse<Worker[]>> {
-    return await api.get<Worker[]>('/ui/api/worker')
+    return await api.get<Worker[]>('../api/worker')
 }
 
 export async function workerStatusApi(nodeId: string): Promise<ApiResponse<WorkerStatusInfo>> {
-    return await api.get<WorkerStatusInfo>(`/ui/api/worker/${nodeId}/status`)
+    return await api.get<WorkerStatusInfo>(`../api/worker/${nodeId}/status`)
 }
 
 export async function workerTaskApi(nodeId: string, taskId: string): Promise<ApiResponse<WorkerTaskInfo>> {
-    return await api.get<WorkerTaskInfo>(`/ui/api/worker/${nodeId}/task/${taskId}`)
+    return await api.get<WorkerTaskInfo>(`../api/worker/${nodeId}/task/${taskId}`)
 }
 
 export async function queryApi(): Promise<ApiResponse<QueryInfo[]>> {
-    return await api.get<QueryInfo[]>('/ui/api/query')
+    return await api.get<QueryInfo[]>('../api/query')
 }
 
 export async function queryStatusApi(queryId: string, pruned: boolean = false): Promise<ApiResponse<QueryStatusInfo>> {
-    return await api.get<QueryStatusInfo>(`/ui/api/query/${queryId}${pruned ? '?pruned=true' : ''}`)
+    return await api.get<QueryStatusInfo>(`../api/query/${queryId}${pruned ? '?pruned=true' : ''}`)
 }
